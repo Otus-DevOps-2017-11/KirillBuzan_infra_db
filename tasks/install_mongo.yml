@@ -1,0 +1,34 @@
+---
+- name: Add repositary key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: EA312927
+  tags: install
+
+- name: Add repositary MongoDB
+  apt_repository:
+    repo: deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+    state: present
+  tags: install
+
+- name: Install packages MongoDB
+  apt: 
+    name: "mongodb-org"
+    state: present
+  tags: install
+   
+- name: Enabled MongoDB service 
+  systemd:
+    name: mongod
+    state: started
+    enabled: true
+  tags: install
+    
+- name: Get status Mongod
+  command: systemctl status mongod
+  register: mongodstatus
+  tags: install
+
+- name: Debug get status Mongod
+  debug: var=mongodstatus
+  tags: install

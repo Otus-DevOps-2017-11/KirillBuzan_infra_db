@@ -1,0 +1,7 @@
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache
+Infra-2ed7216cd032.json
