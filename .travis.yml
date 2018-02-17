@@ -13,7 +13,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_3c7bb4ac01ca_key -iv $encrypted_3c7bb4ac01ca_iv
   -in travis_secrets.tar.enc -out travis_secrets.tar -d
 - tar xvf travis_secrets.tar
-- mv gce_tracis /home/travis/.ssh/
+- mv gce_travis /home/travis/.ssh/
 - chmod 0600 /home/travis/.ssh/gce_travis
 env:
   global:
