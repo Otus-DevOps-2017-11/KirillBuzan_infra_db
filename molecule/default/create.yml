@@ -11,7 +11,7 @@
 
     ssh_port: 22
     ssh_user: "{{ lookup('env', 'USER') }}"
-    ssh_identity_file: "{{ lookup('env', 'HOME') }}/.ssh/google_compute_engine"
+    ssh_identity_file: "{{ lookup('env', 'HOME') }}/.ssh/gce_travis"
   tasks:
     - name: Create molecule instance(s)
       gce:
